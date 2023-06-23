@@ -1,0 +1,30 @@
+<h1>Informace o uživateli</h1>
+
+<?php
+
+    echo ("<h2>" . htmlspecialchars($users['name']) . htmlspecialchars($users['surname']) . "</h2>");
+    echo("<p>" . htmlspecialchars($users['address']) . "</p>");
+    echo("<p>" . htmlspecialchars($users['town']) . "</p>");
+    echo("<p>" . htmlspecialchars($users['age']) . "</p>");
+    echo("<p>" . htmlspecialchars($users['phone']) . "</p>");
+?>
+
+<a href="insurance?id=<?=$users['policyholder_ID'] ?>"><button>Přidat pojištění</button></a>
+<a href="update?id=<?=$users['policyholder_ID'] ?>"><button>Upravit údaje</button></a>
+
+<?php
+echo('<h2>Sjednaná pojištění</h2><table border="1">');
+
+    echo ('<tr>
+    <th>Druh pojištění</th>
+    <th>Částka</th>
+    </tr>');
+?>
+<?php foreach ($insurances as $insurance){
+
+    echo('<tr><td>' .  htmlspecialchars($insurance['name']));
+    echo('</td><td>' . htmlspecialchars($insurance['amount']));
+    echo('</td></tr>');
+}
+echo('</table>');
+?>

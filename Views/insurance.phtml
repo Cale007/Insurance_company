@@ -1,0 +1,17 @@
+<h1>Přiřadit pojištění k <?= $user['name'] ?></h1>
+
+<form method="POST">
+<select name="insurance">
+<?php foreach ($insurances as $insurance){?>
+    <option value="<?= $insurance['Insurance_ID'] ?>"> <?= $insurance['name'] ?></option>
+<?php } ?>
+</select>
+<input type="hidden" name="userID" value="<?= $user['policyholder_ID'] ?>">
+Částka
+<input type="number" name="value">
+Platnost od
+<input type="date" name="from">
+Platnost do 
+<input type="date" name="to">
+<input type="submit" value="odeslat">
+</form>

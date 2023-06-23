@@ -1,0 +1,60 @@
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 2em;
+}
+
+nav ul li {
+    background-color: rgb(219, 140, 130);
+    padding: 5px;
+    border-radius: 10%;
+}
+
+input[type="submit"] {
+    background: #df4b06;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 0px;
+    margin-bottom: 20px;
+}
+
+input[type="submit"]:hover {
+    background: #f88629;
+    color: #EEEEEE;
+    cursor: pointer;
+}
+
+input[type="text"], input[type="email"], input[type="password"], [type="number"] {
+    width: 150px;
+    border-radius: 7px;
+    border: 1px solid #aaaaaa;
+    padding: 0.3em;
+}
+
+button {
+    background-color: rgb(219, 140, 130);
+    border-radius: 7px;
+}
+
+footer {
+	font-size: 15px;
+	text-align: center;
+	padding-top: 20px;
+}
+
+nav a {
+	color: white;
+	padding: 5px 10px;
+	border-radius: 10px;
+	text-decoration: none;
+	border: none;
+	cursor: pointer;
+}
+
+nav a:hover {
+	background: rgb(230, 140, 130);
+	color: #EEEEEE;
+	text-decoration: none;
+}

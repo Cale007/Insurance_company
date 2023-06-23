@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <base href="/localhost">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"content="<?= $desc ?>">
+    <meta name="keywords" content="<?= $keyWord ?>">
+    <title><?= $caption ?></title>
+</head>
+<body>
+    <header>
+        <?php if(isset($_SESSION['user'])) {?>
+                <p>Přihlášený uživatel: <?= $_SESSION['user']['name']?></p>
+                <a href="LogOut">Odhlásit</a>
+            <?php } ?>
+    
+        <h1>Pojišťovna App</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="welcome">Úvod</a></li>
+            <li><a href="form">Registrace</a></li>
+            <li><a href="insureds">Pojištěnci</a></li>
+        </ul>
+    </nav>
+
+    <article>
+        <?php $this->controler->writeView(); ?>
+    </article>
+
+    <footer>
+        Závěrečný projekt pro kurz programátora.
+        <a href="login">Přihlášení</a>
+    </footer>
+</body>
+</html>

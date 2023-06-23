@@ -1,0 +1,41 @@
+<h1>Výpis pojištěnců</h1>
+
+<form method="POST">
+    <input type="text" name="list" placeholder="Zadej jméno" required>
+    <input type="submit" value="Vyhledej">
+</form>
+<?php
+
+if (empty($users)){ ?>
+   <script>
+    alert("Uživatel nenalezen.")
+   </script>
+<?php
+return; 
+}
+
+?>
+<?php
+echo('<h2>Uživatelé</h2><table border="1">');
+echo ('<tr>
+<th>Jméno</th>
+<th>Přijmení</th>
+<th>Adresa</th>
+<th>Město</th>
+<th>Věk</th>
+<th>Telefon</th>
+</tr>');
+?>
+<?php foreach ($users as $user){
+    echo('<tr><td>' .  htmlspecialchars($user['name']));
+    echo('</td><td>' . htmlspecialchars($user['surname']));
+    echo('</td><td>' . htmlspecialchars($user['address']));
+    echo('</td><td>' . htmlspecialchars($user['town']));
+    echo('</td><td>' . htmlspecialchars($user['age']));
+    echo('</td><td>' . htmlspecialchars($user['phone']));
+    echo('</td><td>' . '<a href="user?id=' . $user['policyholder_ID'] . '"> více info </a>');
+    echo('</td></tr>');
+}
+echo('</table>');
+?>
+
